@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Список работ</h1>
+{% for item in jobs %}
+<div>
+    <h3>Работа # {{item.id}}</h3>
+    <table class="table">
+        <tr class="table_head">
+            <th>title of activity</th>
+            <th>team leader</th>
+            <th>duration</th>
+            <th>list of collaborators</th>
+            <th>is finished</th>
+        </tr>
+        <tr class="table_data">
+            <td>{{item.job}}</td>
+            <td>{{item.team_leader}}</td>
+            <td>{{item.work_size}}</td>
+            <td>{{item.collaborators}}</td>
+            <td>{{item.is_finished}}</td>
+        </tr>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}

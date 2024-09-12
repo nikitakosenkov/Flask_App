@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавление работы</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <h4>{{ form.job_title.label }}</h4>
+    <div>{{ form.job_title() }}</div>
+    <br>
+
+    <h4>{{ form.team_leader_id.label }}</h4>
+    <div>{{ form.team_leader_id() }}</div>
+    <br>
+
+    <h4>{{ form.work_size.label }}</h4>
+    <div>{{ form.work_size() }}</div>
+    <br>
+
+    <h4>{{ form.collaborators.label }}</h4>
+    <div>{{ form.collaborators() }}</div>
+    <br>
+
+    <span>{{ form.is_job_finished() }} {{ form.is_job_finished.label }}</span>
+    <br><br>
+
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+{% endblock %}
